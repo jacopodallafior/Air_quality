@@ -33,11 +33,8 @@ It integrates data collection, processing, management via a feature store, and p
 ## 🚀 Getting Started  
 
 1. **View Predictions**  
-   Access the [interactive dashboard](https://jacopodallafior.github.io/Air_quality/air-quality/) to consult prediction data.  
-
-2. **Request a Prediction**  
-   Use the [Gradio Live Tool](https://e8055f13e89e464989.gradio.live/) to submit a new prediction request.  
-
+   Access the [interactive dashboard](https://grandediw.github.io/Air-Quality-Prediction/air-quality/) to consult prediction data.  
+ 
 ---
 
 ## 🛠️ How to Contribute  
