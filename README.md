@@ -54,7 +54,9 @@ cd air-quality-prediction
 # Install required dependencies
 pip install -r requirements.txt
 
-# Launch the pipeline by running '1_air_quality_feature_backfill.ipynb'
+# Launch the pipeline by running
+cd notebooks/ch03
+jupyter nbconvert --to notebook --execute 1_air_quality_feature_backfill.ipynb
 
 ```
 
