@@ -47,9 +47,6 @@ Access predictions that utilize rolling window features on the [Interactive Dash
 #### Without Rolling Window Features  
 Explore predictions without rolling window features on this [Interactive Dashboard](https://jacopodallafior.github.io/Air_quality/air-quality/).  
 
-### 2. Request a Prediction  
-Submit a new prediction request using the [Gradio Live Tool](https://e8055f13e89e464989.gradio.live/).  
-
 ---
 
 ## Rolling Window Prediction Details  
