@@ -79,7 +79,6 @@ This version implements air quality prediction using rolling window features to 
 - **MSE**: 34.85334  
 - **R-Squared**: 0.01622  
 
-![Performance Metrics](Standard_MSE_Rsquared.jpg)  
 ![Prediction Results](Standard_Results.jpg)  
 
 ### With Rolling Window Features  
@@ -87,7 +86,6 @@ This version implements air quality prediction using rolling window features to 
 - **MSE**: 6.9079943  
 - **R-Squared**: 0.61780  
 
-![Performance Metrics](RollingWindow_MSE_Rsquared.jpg)  
 ![Prediction Results](RollingWindow_Results.jpg)  
 
 ---
