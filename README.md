@@ -43,7 +43,3 @@ Help improve this project!
 - Fork the repository  
 - Submit pull requests with your changes  
 - Add new features to the system  
-
----
-
-If you need further modifications or to include additional details, let me know! 😊
