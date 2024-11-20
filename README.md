@@ -1,16 +1,17 @@
+Here’s the updated **README.md** that includes the mention of both versions (with and without the rolling window):
+
+---
+
 # AIR QUALITY PREDICTOR 🌍💨  
 
-**Air Quality Predictor** is an advanced machine learning system designed to forecast air quality levels at **Serso via dei Caduti**, leveraging a feature store for integrated batch and real-time data pipelines. Inspired by O'Reilly's *Building Machine Learning Systems with a Feature Store: Batch, Real-Time, and LLMs*, this project demonstrates the power of scalable and interactive ML systems.
+**Air Quality Predictor** is an advanced machine learning system designed to forecast air quality levels at *Serso via dei Caduti*, leveraging a feature store for integrated batch and real-time data pipelines. Inspired by O'Reilly's *Building Machine Learning Systems with a Feature Store: Batch, Real-Time, and LLMs*, this project demonstrates the power of scalable and interactive ML systems.
 
 ---
 
 ## 📌 Pipeline Overview  
 
-The pipeline integrates:
-- **Data Collection**: Automated retrieval of historical and real-time weather and air quality data.
-- **Data Processing**: Cleaning, aggregation, and transformation for ML readiness.
-- **Feature Management**: Efficient storage and retrieval of engineered features via a feature store.
-- **Model Predictions**: Batch and real-time forecasts using an XGBoost regressor.  
+The system is structured following the pipeline shown below.  
+It integrates data collection, processing, management via a feature store, and prediction based on ML models.  
 
 ![Pipeline Diagram](images/pipeline.png)  
 *Figure: Data flow and system architecture.*
@@ -19,55 +20,71 @@ The pipeline integrates:
 
 ## ✨ Key Features  
 
-1. **Dual Mode Processing**  
-   - Supports both **real-time** and **batch** predictions for flexible operations.  
+1. **Batch and Real-Time Processing:**  
+   - Supports data updates in both **real-time** and **batch** modes.  
 
-2. **Advanced Feature Store**  
-   - Optimized feature management ensures fast access and version control for training and inference.  
+2. **Advanced Feature Store:**  
+   - Efficiently manages features for training and predictions.  
 
-3. **LLM Integration**  
-   - Pioneering techniques such as **Fine-Tuning** and **Retrieval-Augmented Generation (RAG)** for extending capabilities.  
+3. **Support for LLMs:**  
+   - Implements advanced techniques like **Fine-Tuning** and **Retrieval-Augmented Generation (RAG)**.  
 
-4. **Interactive Dashboard**  
-   - Real-time insights via a live dashboard to monitor predictions and trends.  
+4. **Rolling Window Features:**  
+   - Enhances predictive accuracy with a 3-day rolling mean of PM2.5 as an additional feature.  
 
-5. **Scalable and Modular**  
-   - Easy to extend for new locations, features, or predictive models.  
+5. **Interactive Predictions:**  
+   - Live dashboard and tools for real-time data monitoring and prediction requests.  
 
 ---
 
 ## 🚀 Getting Started  
 
-### 1. Access the Predictions  
-View the live predictions on the [Interactive Dashboard](https://grandediw.github.io/Air-Quality-Prediction/air-quality/).
+### 1. View Predictions  
 
-### 2. Set Up Locally  
-Clone the repository and follow these steps:  
+#### With Rolling Window Features  
+Access predictions that utilize rolling window features on the [Interactive Dashboard](https://jacopodallafior.github.io/Air_Quality_Rolling_Window/air-quality/).  
 
-```bash
-# Clone the repo
-git clone https://github.com/Grandediwername/air-quality-prediction.git
+#### Without Rolling Window Features  
+Explore predictions without rolling window features on this [Interactive Dashboard](https://jacopodallafior.github.io/Air_quality/air-quality/).  
 
-# Navigate to the project directory
-cd air-quality-prediction
-
-# Install required dependencies
-pip install -r requirements.txt
-
-# Launch the pipeline by running
-cd notebooks/ch03
-jupyter nbconvert --to notebook --execute 1_air_quality_feature_backfill.ipynb
-
-```
-
-### 3. Deploy the Dashboard  
-Follow the [dashboard setup guide](docs/DASHBOARD_SETUP.md) for hosting locally or on a cloud platform.
+### 2. Request a Prediction  
+Submit a new prediction request using the [Gradio Live Tool](https://e8055f13e89e464989.gradio.live/).  
 
 ---
 
-## 🛠️ How to Contribute  
+## Rolling Window Prediction Details  
 
-We welcome contributions from the community! Here's how you can help:  
+This version implements air quality prediction using rolling window features to enhance the model's accuracy and prediction capabilities.  
+
+### Rolling Window Feature Update  
+
+1. **Rolling Window Calculation**  
+   The dataset includes a new feature: a 3-day rolling mean of the PM2.5 values, calculated as follows:  
+   ```python
+   df_roll['pm25_3day_roll_mean'] = df_roll['pm25'].rolling(window=3).mean()
+   ```
+
+2. **Daily Feature Updates**  
+   A notebook (**2_air_quality_feature_pipeline.ipynb**) recalculates the rolling window mean daily using real-time PM2.5 data.  
+
+3. **Enhanced Predictions**  
+   The rolling window feature, combined with weather data, provides accurate predictions for future PM2.5 levels.  
+
+---
+
+## ✨ Additional Resources  
+
+- **Without Rolling Window Features:**  
+   Predictions and pipeline details for the version without rolling window features can be accessed [here](https://jacopodallafior.github.io/Air_quality/air-quality/).  
+
+- **With Rolling Window Features:**  
+   Explore the enhanced rolling window feature pipeline [here](https://jacopodallafior.github.io/Air_Quality_Rolling_Window/air-quality/).  
+
+---
+
+## 🛠 How to Contribute  
+
+We welcome contributions to improve this project:  
 1. Fork the repository.  
 2. Create a feature branch for your changes.  
 3. Submit a pull request.  
