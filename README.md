@@ -1,4 +1,4 @@
-Here’s the updated **README.md** that includes the mention of both versions (with and without the rolling window):
+Here’s the updated **README.md** that includes the performance and plots for both versions of the model:
 
 ---
 
@@ -21,7 +21,7 @@ It integrates data collection, processing, management via a feature store, and p
 ## ✨ Key Features  
 
 1. **Batch and Real-Time Processing:**  
-   - Supports data updates in both **real-time** and **batch** modes.  
+   - Supports both **real-time** and **batch** predictions for flexible operations.  
 
 2. **Advanced Feature Store:**  
    - Efficiently manages features for training and predictions.  
@@ -47,6 +47,9 @@ Access predictions that utilize rolling window features on the [Interactive Dash
 #### Without Rolling Window Features  
 Explore predictions without rolling window features on this [Interactive Dashboard](https://jacopodallafior.github.io/Air_quality/air-quality/).  
 
+### 2. Request a Prediction  
+Submit a new prediction request using the [Gradio Live Tool](https://e8055f13e89e464989.gradio.live/).  
+
 ---
 
 ## Rolling Window Prediction Details  
@@ -66,6 +69,26 @@ This version implements air quality prediction using rolling window features to 
 
 3. **Enhanced Predictions**  
    The rolling window feature, combined with weather data, provides accurate predictions for future PM2.5 levels.  
+
+---
+
+## ✨ Model Performance  
+
+### Without Rolling Window Features  
+
+- **MSE**: 34.85334  
+- **R-Squared**: 0.01622  
+
+![Performance Metrics](Standard_MSE_Rsquared.jpg)  
+![Prediction Results](Standard_Results.jpg)  
+
+### With Rolling Window Features  
+
+- **MSE**: 6.9079943  
+- **R-Squared**: 0.61780  
+
+![Performance Metrics](RollingWindow_MSE_Rsquared.jpg)  
+![Prediction Results](RollingWindow_Results.jpg)  
 
 ---
 
@@ -100,3 +123,5 @@ This project was inspired by the book *Building Machine Learning Systems with a 
 ---
 
 For questions or feedback, feel free to [open an issue](https://github.com/Grandediw/air-quality-prediction/issues).  
+
+--- 
