@@ -54,8 +54,8 @@ cd air-quality-prediction
 # Install required dependencies
 pip install -r requirements.txt
 
-# Launch the pipeline
-python main.py
+# Launch the pipeline by running '1_air_quality_feature_backfill.ipynb'
+
 ```
 
 ### 3. Deploy the Dashboard  
